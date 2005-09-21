@@ -8,12 +8,13 @@ Version:	0.2
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/sourceforge/ksudoku/%{name}-%{version}.tar.gz
 # Source0-md5:	bbaec4dc617f1c10475ea5faf2a679b4
 URL:		http://ksudoku.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,7 +33,7 @@ drukowanie, rozwi±zywanie i pokazywanie prawid³owych rozwi±zañ.
 echo "Categories=Qt;KDE;Applications;Games;Board;" >> src/${name}.desktop
 
 %build
-cp -f %{_datadir}/automake/config.sub admin
+cp -f /usr/share/automake/config.sub admin
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
@@ -46,6 +47,7 @@ cp -f %{_datadir}/automake/config.sub admin
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_desktopdir}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir} \
@@ -59,8 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kde/ksudoku.desktop
 %{_iconsdir}/*/*/apps/%{name}.png
 %{_datadir}/apps/%{name}
-%doc ChangeLog README
