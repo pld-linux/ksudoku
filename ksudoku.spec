@@ -5,11 +5,12 @@ Summary:	Sudoku Puzzle Generator and solver for KDE
 Summary(pl):	Program generuj±cy i rozwi±zuj±cy diagramy Sudoku dla KDE
 Name:		ksudoku
 Version:	0.2
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/sourceforge/ksudoku/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/ksudoku/%{name}-%{version}.tar.gz
 # Source0-md5:	bbaec4dc617f1c10475ea5faf2a679b4
+Patch0:		%{name}-desktop.patch
 URL:		http://ksudoku.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,7 +31,7 @@ drukowanie, rozwi±zywanie i pokazywanie prawid³owych rozwi±zañ.
 
 %prep
 %setup -q
-echo "Categories=Qt;KDE;Applications;Games;Board;" >> src/${name}.desktop
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -53,7 +54,6 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 	kde_htmldir=%{_kdedocdir} \
 	kdelnkdir=%{_desktopdir}/kde
 
-
 %find_lang %{name} --with-kde
 
 %clean
@@ -61,8 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kde/ksudoku.desktop
-%{_iconsdir}/*/*/apps/%{name}.png
+%{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/apps/%{name}
