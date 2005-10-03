@@ -1,6 +1,3 @@
-# TODO
-# - fix translation of description
-#
 Summary:	Sudoku Puzzle Generator and solver for KDE
 Summary(pl):	Program generuj±cy i rozwi±zuj±cy diagramy Sudoku dla KDE
 Name:		ksudoku
@@ -12,10 +9,10 @@ Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	d5fe20e9deda671dd15340f43ab4c4a3
 Patch0:		%{name}-desktop.patch
 URL:		http://ksudoku.sourceforge.net/
+BuildRequires:	OpenGL-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
-BuildRequires:	X11-OpenGL-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,9 +23,11 @@ The program is fully expandable since the algorithm is extendible to
 any general graph coloring problem.
 
 %description -l pl
-Program generuj±cy i rozwi±zuj±cy plansze Sudoku dla KDE. Wspiera
-plansze o rozmiarach 9x9 i 16x16. GUI obs³uguje gre, zapisywanie,
-drukowanie, rozwi±zywanie i pokazywanie prawid³owych rozwi±zañ.
+Program generuj±cy i rozwi±zuj±cy plansze Sudoku dla KDE. Obs³uguje
+plansze o rozmiarach 9x9 i 16x16. Interfejs graficzny obs³uguje grê,
+zapisywanie, drukowanie, rozwi±zywanie i pokazywanie prawid³owych
+rozwi±zañ. Program jest w pe³ni rozszerzalny, jako ¿e algorytm jest
+rozszerzalny dla dowolnego problemu kolorowania grafów.
 
 %prep
 %setup -q
