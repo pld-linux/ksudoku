@@ -5,7 +5,7 @@ Version:	0.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/sourceforge/ksudoku/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/ksudoku/%{name}-%{version}.tar.gz
 # Source0-md5:	d5fe20e9deda671dd15340f43ab4c4a3
 Patch0:		%{name}-desktop.patch
 URL:		http://ksudoku.sourceforge.net/
