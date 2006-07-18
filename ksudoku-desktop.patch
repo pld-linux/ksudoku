@@ -1,7 +1,7 @@
 diff -urN ksudoku-0.2/src/ksudoku.desktop ksudoku-0.2.new/src/ksudoku.desktop
 --- ksudoku-0.2/src/ksudoku.desktop	2005-08-28 12:31:27.000000000 +0200
 +++ ksudoku-0.2.new/src/ksudoku.desktop	2005-09-21 15:44:34.000000000 +0200
-@@ -1,9 +1,8 @@
+@@ -1,11 +1,10 @@
  [Desktop Entry]
  Encoding=UTF-8
  Name=ksudoku
@@ -10,8 +10,11 @@ diff -urN ksudoku-0.2/src/ksudoku.desktop ksudoku-0.2.new/src/ksudoku.desktop
 -Icon=ksudoku
 +Icon=ksudoku.png
  Type=Application
- DocPath=ksudoku/ksudoku.html
+-DocPath=ksudoku/ksudoku.html
++DocPath=ksudoku/index.html
  Comment=A KDE KPart Application
+ Comment[ca]=Una aplicació KPart per a KDE
+ Comment[cy]=Cymhwysiad KPart KDE
 @@ -39,3 +38,5 @@
  Comment[xx]=xxA KDE KPart Applicationxx
  Comment[zh_CN]=一个 KDE KPart 应用程序
