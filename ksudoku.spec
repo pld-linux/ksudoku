@@ -1,5 +1,5 @@
 Summary:	Sudoku Puzzle Generator and solver for KDE
-Summary(pl):	Program generuj±cy i rozwi±zuj±cy diagramy Sudoku dla KDE
+Summary(pl.UTF-8):   Program generujÄ…cy i rozwiÄ…zujÄ…cy diagramy Sudoku dla KDE
 Name:		ksudoku
 Version:	0.3
 Release:	2
@@ -22,12 +22,12 @@ Sudoku Puzzle Generator and Solver for KDE. Boards supported: 9x9 and
 The program is fully expandable since the algorithm is extendible to
 any general graph coloring problem.
 
-%description -l pl
-Program generuj±cy i rozwi±zuj±cy plansze Sudoku dla KDE. Obs³uguje
-plansze o rozmiarach 9x9 i 16x16. Interfejs graficzny obs³uguje grê,
-zapisywanie, drukowanie, rozwi±zywanie i pokazywanie prawid³owych
-rozwi±zañ. Program jest w pe³ni rozszerzalny, jako ¿e algorytm jest
-rozszerzalny dla dowolnego problemu kolorowania grafów.
+%description -l pl.UTF-8
+Program generujÄ…cy i rozwiÄ…zujÄ…cy plansze Sudoku dla KDE. ObsÅ‚uguje
+plansze o rozmiarach 9x9 i 16x16. Interfejs graficzny obsÅ‚uguje grÄ™,
+zapisywanie, drukowanie, rozwiÄ…zywanie i pokazywanie prawidÅ‚owych
+rozwiÄ…zaÅ„. Program jest w peÅ‚ni rozszerzalny, jako Å¼e algorytm jest
+rozszerzalny dla dowolnego problemu kolorowania grafÃ³w.
 
 %prep
 %setup -q
