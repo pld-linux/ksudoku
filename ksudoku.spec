@@ -1,5 +1,5 @@
 Summary:	Sudoku Puzzle Generator and solver for KDE
-Summary(pl.UTF-8):   Program generujący i rozwiązujący diagramy Sudoku dla KDE
+Summary(pl.UTF-8):	Program generujący i rozwiązujący diagramy Sudoku dla KDE
 Name:		ksudoku
 Version:	0.3
 Release:	2
