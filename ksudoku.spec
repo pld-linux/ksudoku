@@ -8,6 +8,8 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/ksudoku/%{name}-%{version}.tar.gz
 # Source0-md5:	d5fe20e9deda671dd15340f43ab4c4a3
 Patch0:		%{name}-desktop.patch
+Patch1:		kde-ac260.patch
+Patch2:		ksudoku-am.patch
 URL:		http://ksudoku.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	autoconf
@@ -32,6 +34,8 @@ rozszerzalny dla dowolnego problemu kolorowania grafów.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
