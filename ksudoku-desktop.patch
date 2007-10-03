@@ -1,23 +1,18 @@
-diff -urN ksudoku-0.2/src/ksudoku.desktop ksudoku-0.2.new/src/ksudoku.desktop
---- ksudoku-0.2/src/ksudoku.desktop	2005-08-28 12:31:27.000000000 +0200
-+++ ksudoku-0.2.new/src/ksudoku.desktop	2005-09-21 15:44:34.000000000 +0200
-@@ -1,11 +1,10 @@
- [Desktop Entry]
- Encoding=UTF-8
- Name=ksudoku
--Name[xx]=xxksudokuxx
+--- ksudoku-0.4/src/gui/ksudoku.desktop	2007-03-17 13:50:01.000000000 +0000
++++ ksudoku-0.4/src/gui/ksudoku.desktop	2007-10-03 09:59:07.000000000 +0000
+@@ -4,7 +4,7 @@
  Exec=ksudoku %i %m -caption "%c"
--Icon=ksudoku
-+Icon=ksudoku.png
+ Icon=ksudoku
  Type=Application
 -DocPath=ksudoku/ksudoku.html
 +DocPath=ksudoku/index.html
- Comment=A KDE KPart Application
- Comment[ca]=Una aplicació KPart per a KDE
- Comment[cy]=Cymhwysiad KPart KDE
-@@ -39,3 +38,5 @@
- Comment[xx]=xxA KDE KPart Applicationxx
- Comment[zh_CN]=一个 KDE KPart 应用程序
+ Comment=KSudoku, Sudoku game & more for KDE
+ Comment[de]=KSudoku, Sudoku-Spiel & mehr für KDE
+ Comment[nl]=KSudoku, Sudoku-spel en meer voor KDE
+@@ -12,4 +12,5 @@
+ Comment[pt_BR]=KSudoku, um jogo do Sudoku para o KDE
+ Comment[sv]=Ksudoku, Sudoku spel med mera för KDE
  Terminal=false
-+Categories=Qt;KDE;Game;BoardGame;
+-Categories=Qt;KDE;Game;PuzzleGame;
++Categories=Qt;KDE;Game;LogicGame;
 +# vi: encoding=utf-8
