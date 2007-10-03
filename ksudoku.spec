@@ -1,19 +1,17 @@
 Summary:	Sudoku Puzzle Generator and solver for KDE
 Summary(pl.UTF-8):	Program generujący i rozwiązujący diagramy Sudoku dla KDE
 Name:		ksudoku
-Version:	0.3
-Release:	2
+Version:	0.4
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/ksudoku/%{name}-%{version}.tar.gz
-# Source0-md5:	d5fe20e9deda671dd15340f43ab4c4a3
+# Source0-md5:	418f9ecac5756f7bc79863596dee7f34
 Patch0:		%{name}-desktop.patch
-Patch1:		kde-ac260.patch
-Patch2:		ksudoku-am.patch
 URL:		http://ksudoku.sourceforge.net/
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	cmake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,19 +32,10 @@ rozszerzalny dla dowolnego problemu kolorowania grafów.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
-cp -f /usr/share/automake/config.sub admin
-%{__make} -f admin/Makefile.common cvs
+%cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} .
 
-%configure \
-%if "%{_lib}" == "lib64"
-    --enable-libsuffix=64 \
-%endif
-    --%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
-    --with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
@@ -58,15 +47,14 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 	kde_htmldir=%{_kdedocdir} \
 	kdelnkdir=%{_desktopdir}/kde
 
-%find_lang %{name} --with-kde
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kde/ksudoku.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/apps/%{name}
+%{_datadir}/config/ksudokurc
