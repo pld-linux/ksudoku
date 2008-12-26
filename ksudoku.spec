@@ -8,6 +8,7 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/ksudoku/%{name}-%{version}.tar.gz
 # Source0-md5:	418f9ecac5756f7bc79863596dee7f34
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-gcc43.patch
 URL:		http://ksudoku.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -32,6 +33,7 @@ rozszerzalny dla dowolnego problemu kolorowania grafów.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} .
